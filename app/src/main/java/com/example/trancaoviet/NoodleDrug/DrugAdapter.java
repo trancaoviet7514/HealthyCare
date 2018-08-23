@@ -2,11 +2,13 @@ package com.example.trancaoviet.NoodleDrug;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -14,6 +16,7 @@ import java.util.ArrayList;
 public class DrugAdapter extends RecyclerView.Adapter<DrugAdapter.MyViewHolder>{
 
     private ArrayList<Drug> drugList;
+    public static Drug DrugSelected;
     Context mContext;
 
     public DrugAdapter(Context context, ArrayList<Drug> drugList) {
@@ -28,6 +31,7 @@ public class DrugAdapter extends RecyclerView.Adapter<DrugAdapter.MyViewHolder>{
         public ImageButton btnDrugBox, btnDrugStore;
         public Drug drugSelected;
         int position = 0;
+        ImageView imgThumIcon;
 
         public MyViewHolder(View view) {
             super(view);
@@ -35,10 +39,13 @@ public class DrugAdapter extends RecyclerView.Adapter<DrugAdapter.MyViewHolder>{
             drugName = (TextView) view.findViewById(R.id.drug_name);
             btnDrugBox = (ImageButton) view.findViewById(R.id.btnDrugBox);
             btnDrugStore = (ImageButton) view.findViewById(R.id.btnDrugStore);
+            imgThumIcon = view.findViewById(R.id.imgDrugImage);
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    mContext.startActivity(new Intent(mContext,DrugDetail.class));
+                    Intent intent = new Intent(mContext,DrugDetail.class);
+                    DrugSelected = drugSelected;
+                    mContext.startActivity(intent);
                 }
             });
 
@@ -88,6 +95,7 @@ public class DrugAdapter extends RecyclerView.Adapter<DrugAdapter.MyViewHolder>{
         holder.drugSelected = drugList.get(position);
         holder.position = position;
         holder.drugName.setText(drugList.get(position).getName());
+        holder.imgThumIcon.setImageBitmap(drugList.get(position).getImage());
     }
 
     @Override

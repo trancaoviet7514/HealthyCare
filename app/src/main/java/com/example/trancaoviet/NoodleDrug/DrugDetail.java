@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -14,10 +16,25 @@ public class DrugDetail extends AppCompatActivity {
     public static ArrayList<DrugStore> listDrugStore;
     public static DrugStoreAdapter drugAdapterStore;
 
+    ImageView imgDrugImage;
+    TextView txtDrugName, txtComponent, txtPrice, txtUsecase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drug_detail);
+
+        imgDrugImage = findViewById(R.id.img_drug_image);
+        txtComponent = findViewById(R.id.txt_drug_component);
+        txtPrice = findViewById(R.id.txt_drug_price);
+        txtUsecase = findViewById(R.id.txt_drug_usecase);
+        txtDrugName = findViewById(R.id.txt_drug_name);
+
+        imgDrugImage.setImageBitmap(DrugAdapter.DrugSelected.getImage());
+        txtComponent.setText(DrugAdapter.DrugSelected.getComponent());
+        txtPrice.setText(DrugAdapter.DrugSelected.getPrice());
+        txtUsecase.setText(DrugAdapter.DrugSelected.getUseCase());
+        txtDrugName.setText(DrugAdapter.DrugSelected.getName());
 
         listDrugStore = new ArrayList<>();
         listDrugStore.add(new DrugStore("Hoa Hồng","123 Nguyễn Văn Linh, phường 4, quận 7"));
@@ -44,5 +61,7 @@ public class DrugDetail extends AppCompatActivity {
         rcvDrugStore.addItemDecoration(dividerItemDecoration);
         rcvDrugStore.setLayoutManager(linearLayoutManager);
         rcvDrugStore.setAdapter(drugAdapterStore);
+
+
     }
 }

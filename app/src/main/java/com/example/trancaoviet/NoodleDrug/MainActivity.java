@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.DividerItemDecoration;
@@ -26,6 +27,7 @@ import android.widget.ImageButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -70,6 +72,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         addControls();
         addEvents();
+
+
     }
 
     @Override
@@ -272,7 +276,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 final String drugNameSearch = edtSearchDrug.getText().toString().toLowerCase();
                 provider.getAllDrug(new Provider.DrugChangeCallBack() {
                     @Override
-                    public void onFinish(ArrayList<Drug> _listDrug) {
+                    public void onSuccess(final ArrayList<Drug> _listDrug) {
                         listDrug.clear();
                         for(int i = 0; i < _listDrug.size();i++){
                             int j = 0;
@@ -281,9 +285,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 if(drug_name.indexOf( drugNameSearch.charAt(j) ) == -1 )
                                 break;
                             }
-                            if(j == drugNameSearch.length()) listDrug.add( _listDrug.get(i) );
+                            if(j == drugNameSearch.length()){
+                                final Drug drug = _listDrug.get(i);
+                                provider.getAllDrugImage(drug.getName(), new Provider.DrugImageCallBack() {
+                                    @Override
+                                    public void onSuccess(File file) {
+                                        drug.setImage(BitmapFactory.decodeFile(file.getPath()));
+                                        listDrug.add( drug );
+                                        drugAdapter.notifyDataSetChanged();
+                                    }
+
+                                    @Override
+                                    public void onFailure() {
+                                        listDrug.add( drug );
+                                        drugAdapter.notifyDataSetChanged();
+                                    }
+                                });
+                            }
                         }
-                        drugAdapter.notifyDataSetChanged();
+
+                    }
+
+                    @Override
+                    public void onFailure() {
+
                     }
                 });
             }

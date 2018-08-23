@@ -2,12 +2,15 @@ package com.example.trancaoviet.NoodleDrug;
 
 import android.graphics.Bitmap;
 
-public class Drug {
+import java.io.Serializable;
+
+public class Drug implements Serializable {
 
     private int id;
     private String name;
     private String component;
     private String useCase;
+    private String Price;
     private Bitmap image;
 
     public Drug(int id, String name, String component, String useCase, Bitmap image) {
@@ -59,5 +62,13 @@ public class Drug {
 
     public void setImage(Bitmap image) {
         this.image = image;
+    }
+
+    public String getPrice() {
+        return Price;
+    }
+
+    public void setPrice(String price) {
+        Price = price;
     }
 }

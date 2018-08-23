@@ -27,7 +27,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#fff"
         android:layout_marginTop="5dp"
-        android:id="@+id/txtUserName_nav"/>
+        android:id="@+id/txtUserName_nav"
+        android:text="Trần Cao Việt"/>
 
 
 </LinearLayout>
