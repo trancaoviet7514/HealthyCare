@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "744889003402",
+    "firebase_url": "https://noodledrug.firebaseio.com",
+    "project_id": "noodledrug",
+    "storage_bucket": "noodledrug.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744889003402:android:3c7f07f40fecef2d",
+        "android_client_info": {
+          "package_name": "com.example.trancaoviet.NoodleDrug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "744889003402-o3pttkombmve4u5is3cead2bvsl6c2n3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.trancaoviet.NoodleDrug",
+            "certificate_hash": "dd00a5458c9499860590cab2bcce02ca90729013"
+          }
+        },
+        {
+          "client_id": "744889003402-6a6f7iobgdvq23s3m1olrm8ce3sr5855.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCP4nkEJldbDubxBcmemEUYQWDzMu_u6L8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "744889003402-6a6f7iobgdvq23s3m1olrm8ce3sr5855.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

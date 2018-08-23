@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:itemIconTint="@android:color/black"
+    tools:showInt = "navigation_view">
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/grp2">
+        <item
+            android:id="@+id/nav_search_drug"
+            android:icon="@drawable/ic_pills"
+            android:title="@string/search_drug" />
+        <item
+            android:id="@+id/nav_search_sick"
+            android:icon="@drawable/ic_search_sick"
+            android:title="@string/search_sick" />
+        <item
+            android:id="@+id/nav_find_doctor"
+            android:icon="@drawable/ic_nuse"
+            android:title="@string/find_doctor" />
+        <item
+            android:id="@+id/nav_find_drug_store"
+            android:icon="@drawable/ic_store"
+            android:title="@string/find_drug_store" />
+        <item
+            android:id="@+id/nav_health_profile"
+            android:icon="@drawable/ic_profile"
+            android:title="@string/health_profile" />
+    </group>
+
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_Language"
+            android:icon="@drawable/ic_language"
+            android:title="@string/language" />
+        <item
+            android:id="@+id/nav_theme"
+            android:icon="@drawable/theme"
+            android:title="@string/theme" />
+        <item
+            android:id="@+id/nav_logOut"
+            android:icon="@drawable/ic_log_out"
+            android:title="@string/log_out" />
+
+    </group>
+
+
+
+</menu>

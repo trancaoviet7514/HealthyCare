@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgDrugImage"
+        android:src="@drawable/pharmacy"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Task content"
+        android:id="@+id/txt_store_name"
+        android:layout_toRightOf="@+id/imgDrugImage"
+        android:layout_marginLeft="10dp"
+        android:textSize="20dp"
+        android:maxLines="1"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="182 Lê Đại Hành"
+        android:id="@+id/txt_store_address"
+        android:layout_toRightOf="@+id/imgDrugImage"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/txt_store_name"
+        android:textSize="16sp"
+        android:maxLines="1"
+        />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:src="@drawable/map"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/btn_show_store_in_map"
+        android:layout_centerInParent="true"
+        />
+
+</RelativeLayout>
