@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:scrollbarSize="15dp">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activities.DrugDetail"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/txt_drug_image_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/str_image"/>
+        <ImageButton
+            android:id="@+id/btn_drug_load_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txt_drug_image_label"
+            android:src="@drawable/ic_gallery"
+            android:background="@null"/>
+        <ImageButton
+            android:id="@+id/btn_drug_add_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txt_drug_image_label"
+            app:layout_constraintLeft_toRightOf="@id/btn_drug_load_image"
+            android:src="@drawable/ic_camera"
+            android:background="@null"
+            android:layout_marginLeft="20dp"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/img_drug_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_drug_image_label"/>
+
+        <android.support.constraint.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="img_drug_image, btn_drug_add_photo, btn_drug_load_image" />
+
+        <TextView
+            android:id="@+id/txt_drug_name_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tên thuốc"
+            android:background="@drawable/textview_top_border"
+            app:layout_constraintTop_toBottomOf="@id/barrier"
+            android:layout_marginTop="5dp"/>
+        <EditText
+            android:id="@+id/edt_drug_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txt_drug_name_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            />
+        <TextView
+            android:id="@+id/txt_drug_price_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/textview_top_border"
+            app:layout_constraintTop_toBottomOf="@id/edt_drug_name"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:text="Giá niêm yết:"
+            android:paddingLeft="10dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txt_drug_price_label"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/edt_drug_price"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/textview_top_border"
+            app:layout_constraintTop_toBottomOf="@id/edt_drug_price"
+            android:id="@+id/txt_drug_component_label"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:text="Thành phần:"
+
+            android:paddingLeft="10dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txt_drug_component_label"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/edt_drug_component"
+            android:text=""
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/edt_drug_component"
+            android:background="@drawable/textview_top_border"
+            android:id="@+id/txt_drug_usecase_label"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:text="Công dụng:"
+            android:paddingLeft="10dp"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_drug_usecase_label"
+            android:id="@+id/edt_drug_usecase"
+            android:text=""/>
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/ok"
+            app:layout_constraintTop_toBottomOf="@id/edt_drug_usecase"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

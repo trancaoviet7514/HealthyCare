@@ -52,6 +52,8 @@
     <string name="facebook_app_id">1600046080101416</string>
     <string name="fb_login_protocol_scheme">fb1600046080101416</string>
     <string name="health_profile">Healthy profile</string>
+    <string name="str_image">Image</string>
+    <string name="str_add_drug">Add new drug</string>
 
 
 </resources>
