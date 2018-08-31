@@ -1,5 +1,6 @@
 package com.example.trancaoviet.NoodleDrug.DataIO;
 
+import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 
 import com.example.trancaoviet.NoodleDrug.Object.Drug;
@@ -14,7 +15,9 @@ import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -22,7 +25,7 @@ public class Provider {
 
     public static DatabaseReference mFirebaseDataBaseRef = FirebaseDatabase.getInstance().getReference();
     public static StorageReference mFirebaseStorageRef = FirebaseStorage.getInstance().getReferenceFromUrl("gs://noodledrug.appspot.com");
-    private int maxID;
+    private static int maxID;
     private boolean isSignIn = false;
     public static String UserName, Password;
 
@@ -45,7 +48,7 @@ public class Provider {
             }
         };
 
-        mFirebaseDataBaseRef.child("MaxID").addValueEventListener(valueEventListener);
+        mFirebaseDataBaseRef.child("max_id").addValueEventListener(valueEventListener);
 
     }
 
@@ -70,7 +73,7 @@ public class Provider {
             mFirebaseDataBaseRef.child("drug_list").addListenerForSingleValueEvent(myValueEventListener);
     }
 
-    public void getAllDrugImage(String drugName, final DrugImageCallBack drugImageCallBack){
+    public void getAllDrugImage(int drugID, final DrugImageCallBack drugImageCallBack){
 
         File localFile = null;
         try {
@@ -79,7 +82,7 @@ public class Provider {
             e.printStackTrace();
         }
         final File finalLocalFile = localFile;
-        mFirebaseStorageRef.child("images/"+ drugName + ".jpg").getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+        mFirebaseStorageRef.child("images/"+ String.valueOf(drugID) ).getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                 drugImageCallBack.onSuccess(finalLocalFile);
@@ -90,6 +93,19 @@ public class Provider {
                 drugImageCallBack.onFailure();
             }
         });
+    }
+
+    public static void insertDrug(Drug drug){
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        drug.getImage().compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] data = baos.toByteArray();
+        mFirebaseStorageRef.child("images").child(String.valueOf(maxID)).putBytes(data);
+
+        drug.setImage(null);
+        mFirebaseDataBaseRef.child("drug_list").child(String.valueOf(maxID)).setValue(drug);
+        maxID++;
+        mFirebaseDataBaseRef.child("max_id").setValue(maxID);
     }
 
     public interface DrugChangeCallBack {

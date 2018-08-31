@@ -13,11 +13,11 @@ public class Drug implements Serializable {
     private String Price;
     private Bitmap image;
 
-    public Drug(int id, String name, String component, String useCase, Bitmap image) {
-        this.id = id;
+    public Drug(String name, String component, String useCase, String price, Bitmap image) {
         this.name = name;
         this.component = component;
         this.useCase = useCase;
+        Price = price;
         this.image = image;
     }
 

@@ -100,7 +100,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     Provider.mFirebaseDataBaseRef.child("User").child( Provider.UserName ).child("Password").setValue( true );
                                     Provider.mFirebaseDataBaseRef.child("User").child( Provider.UserName ).child("MaxID").setValue( 0 );
 
-                                    startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                                    startActivity(new Intent(LoginActivity.this,DrugSearchActivity.class));
 
                                 } catch (JSONException e) {
                                     e.printStackTrace();
@@ -244,7 +244,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     dialogNoti.show();
                     Provider.UserName = edtUsername.getText().toString();
                     Provider.Password = edtPassword.getText().toString();
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class ) );
+                    startActivity(new Intent(LoginActivity.this, DrugSearchActivity.class ) );
 
                 }
                 else {
@@ -261,7 +261,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                     Provider.UserName = edtUsername.getText().toString();
                     Provider.Password = edtPassword.getText().toString();
-                    startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                    startActivity(new Intent(LoginActivity.this,DrugSearchActivity.class));
 
                 } else {
                     Noti.setText("Tên đăng nhập hoặc mật khẩu không đúng");
@@ -309,7 +309,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 Provider.mFirebaseDataBaseRef.child("User").child( Provider.UserName ).child("MaxID").setValue( 0 );
             }
 
-            startActivity(new Intent(LoginActivity.this,MainActivity.class));
+            startActivity(new Intent(LoginActivity.this,DrugSearchActivity.class));
 
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.

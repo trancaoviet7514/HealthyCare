@@ -6,4 +6,6 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="edt_margin_left_add_new_drug_activity">10dp</dimen>
+    <dimen name="padding_left_textview_add_new_drug">10dp</dimen>
 </resources>

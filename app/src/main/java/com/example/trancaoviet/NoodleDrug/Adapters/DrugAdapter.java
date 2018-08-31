@@ -10,7 +10,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.trancaoviet.NoodleDrug.Activities.MainActivity;
+import com.example.trancaoviet.NoodleDrug.Activities.DrugSearchActivity;
 import com.example.trancaoviet.NoodleDrug.Object.Drug;
 import com.example.trancaoviet.NoodleDrug.Activities.DrugDetail;
 import com.example.trancaoviet.NoodleDrug.R;
@@ -56,10 +56,10 @@ public class DrugAdapter extends RecyclerView.Adapter<DrugAdapter.MyViewHolder>{
             btnDrugBox.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    //MainActivity.taskProvider.deleteTask( drugStoreSelected.getId() );
+                    //DrugSearchActivity.taskProvider.deleteTask( drugStoreSelected.getId() );
                     DrugAdapter.this.notifyItemRemoved(position);
 
-                    MainActivity.listDrug.remove(position);
+                    DrugSearchActivity.listDrug.remove(position);
                     DrugAdapter.this.notifyItemRangeChanged(position,drugList.size()+1);
 
                 }
@@ -68,10 +68,10 @@ public class DrugAdapter extends RecyclerView.Adapter<DrugAdapter.MyViewHolder>{
             btnDrugStore.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    //MainActivity.taskProvider.deleteTask( drugStoreSelected.getId() );
+                    //DrugSearchActivity.taskProvider.deleteTask( drugStoreSelected.getId() );
                     DrugAdapter.this.notifyItemRemoved(position);
 
-                    MainActivity.listDrug.remove(position);
+                    DrugSearchActivity.listDrug.remove(position);
                     DrugAdapter.this.notifyItemRangeChanged(position,drugList.size()+1);
                 }
             });

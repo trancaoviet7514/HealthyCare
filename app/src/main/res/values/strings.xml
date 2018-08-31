@@ -54,6 +54,13 @@
     <string name="health_profile">Healthy profile</string>
     <string name="str_image">Image</string>
     <string name="str_add_drug">Add new drug</string>
+    <string name="txt_message">hello</string>
+    <string name="str_drug_name">Drug name</string>
+    <string name="str_root_price">Root price</string>
+    <string name="str_component">Drug component</string>
+    <string name="str_use_case">Use case</string>
+    <string name="str_cancel">Cancel</string>
+    <string name="str_which_drug_do_you_search">Which drug do you want to find?</string>
 
 
 </resources>

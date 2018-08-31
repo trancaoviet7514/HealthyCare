@@ -17,7 +17,10 @@
             android:id="@+id/txt_drug_image_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/str_image"/>
+            android:text="@string/str_image"
+            android:background="@drawable/textview_top_border"
+            android:paddingLeft="@dimen/padding_left_textview_add_new_drug"
+            android:textStyle="bold"/>
         <ImageButton
             android:id="@+id/btn_drug_load_image"
             android:layout_width="wrap_content"
@@ -29,11 +32,10 @@
             android:id="@+id/btn_drug_add_photo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/txt_drug_image_label"
-            app:layout_constraintLeft_toRightOf="@id/btn_drug_load_image"
+            app:layout_constraintTop_toBottomOf="@id/btn_drug_load_image"
             android:src="@drawable/ic_camera"
             android:background="@null"
-            android:layout_marginLeft="20dp"
+            android:layout_marginTop="4dp"
             />
         <ImageView
             android:layout_width="wrap_content"
@@ -41,7 +43,18 @@
             android:id="@+id/img_drug_image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txt_drug_image_label"/>
+            app:layout_constraintTop_toBottomOf="@id/txt_drug_image_label"
+            android:layout_marginTop="4dp"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_round_delete_button"
+            android:id="@+id/btn_delete_image"
+            app:layout_constraintTop_toTopOf="@id/img_drug_image"
+            app:layout_constraintEnd_toEndOf="@id/img_drug_image"
+            android:layout_margin="2dp"
+            android:visibility="gone"
+            android:background="@null"/>
 
         <android.support.constraint.Barrier
             android:id="@+id/barrier"
@@ -54,10 +67,12 @@
             android:id="@+id/txt_drug_name_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tên thuốc"
+            android:text="@string/str_drug_name"
             android:background="@drawable/textview_top_border"
             app:layout_constraintTop_toBottomOf="@id/barrier"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:paddingLeft="@dimen/padding_left_textview_add_new_drug"/>
         <EditText
             android:id="@+id/edt_drug_name"
             android:layout_width="match_parent"
@@ -67,8 +82,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:textStyle="bold"
             android:textSize="18sp"
-            android:textAlignment="center"
             />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_scan_text_drug_name"
+            app:layout_constraintEnd_toEndOf="@id/edt_drug_name"
+            app:layout_constraintTop_toTopOf="@id/edt_drug_name"
+            android:src="@drawable/qr_code"
+            android:background="@null"
+            android:layout_margin="2dp"/>
         <TextView
             android:id="@+id/txt_drug_price_label"
             android:layout_width="match_parent"
@@ -77,14 +100,22 @@
             app:layout_constraintTop_toBottomOf="@id/edt_drug_name"
             android:textStyle="bold"
             android:textSize="16dp"
-            android:text="Giá niêm yết:"
-            android:paddingLeft="10dp"/>
+            android:text="@string/str_root_price"
+            android:paddingLeft="@dimen/padding_left_textview_add_new_drug"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/txt_drug_price_label"
-            android:layout_marginLeft="20dp"
             android:id="@+id/edt_drug_price"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_scan_text_drug_price"
+            app:layout_constraintEnd_toEndOf="@id/edt_drug_price"
+            app:layout_constraintTop_toTopOf="@id/edt_drug_price"
+            android:src="@drawable/qr_code"
+            android:background="@null"
+            android:layout_margin="2dp"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -93,17 +124,24 @@
             android:id="@+id/txt_drug_component_label"
             android:textStyle="bold"
             android:textSize="16dp"
-            android:text="Thành phần:"
-
-            android:paddingLeft="10dp"/>
+            android:text="@string/str_component"
+            android:paddingLeft="@dimen/padding_left_textview_add_new_drug"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/txt_drug_component_label"
-            android:layout_marginLeft="20dp"
             android:id="@+id/edt_drug_component"
             android:text=""
             />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_scan_text_drug_component"
+            app:layout_constraintEnd_toEndOf="@id/edt_drug_component"
+            app:layout_constraintTop_toTopOf="@id/edt_drug_component"
+            android:src="@drawable/qr_code"
+            android:background="@null"
+            android:layout_margin="2dp"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -111,17 +149,24 @@
             android:background="@drawable/textview_top_border"
             android:id="@+id/txt_drug_usecase_label"
             android:textStyle="bold"
-            android:textSize="16dp"
-            android:text="Công dụng:"
-            android:paddingLeft="10dp"
+            android:textSize="16sp"
+            android:text="@string/str_use_case"
+            android:paddingStart="@dimen/padding_left_textview_add_new_drug"
             />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
             app:layout_constraintTop_toBottomOf="@id/txt_drug_usecase_label"
-            android:id="@+id/edt_drug_usecase"
-            android:text=""/>
+            android:id="@+id/edt_drug_usecase"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_scan_text_drug_usecase"
+            app:layout_constraintEnd_toEndOf="@id/edt_drug_usecase"
+            app:layout_constraintTop_toTopOf="@id/edt_drug_usecase"
+            android:src="@drawable/qr_code"
+            android:background="@null"
+            android:layout_margin="2dp"/>
         <Button
             android:id="@+id/btn_submit"
             android:layout_width="wrap_content"
@@ -129,6 +174,18 @@
             android:background="@color/colorPrimaryDark"
             android:text="@string/ok"
             app:layout_constraintTop_toBottomOf="@id/edt_drug_usecase"
+            android:layout_marginBottom="4dp"
+            />
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/str_cancel"
+            app:layout_constraintTop_toBottomOf="@id/edt_drug_usecase"
+            app:layout_constraintStart_toEndOf="@id/btn_submit"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="8dp"
             />
 
     </android.support.constraint.ConstraintLayout>

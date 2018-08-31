@@ -9,8 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.trancaoviet.NoodleDrug.Adapters.DrugAdapter;
-import com.example.trancaoviet.NoodleDrug.Adapters.DrugStoreAdapter;
-import com.example.trancaoviet.NoodleDrug.Object.DrugStore;
+import com.example.trancaoviet.NoodleDrug.Adapters.PharmacyAdapter;
+import com.example.trancaoviet.NoodleDrug.Object.Pharmacy;
 import com.example.trancaoviet.NoodleDrug.R;
 
 import java.util.ArrayList;
@@ -18,8 +18,8 @@ import java.util.ArrayList;
 public class DrugDetail extends AppCompatActivity {
 
     public static RecyclerView rcvDrugStore;
-    public static ArrayList<DrugStore> listDrugStore;
-    public static DrugStoreAdapter drugAdapterStore;
+    public static ArrayList<Pharmacy> listPharmacy;
+    public static PharmacyAdapter drugAdapterStore;
 
     ImageView imgDrugImage;
     TextView txtDrugName, txtComponent, txtPrice, txtUsecase;
@@ -41,24 +41,24 @@ public class DrugDetail extends AppCompatActivity {
         txtUsecase.setText(DrugAdapter.DrugSelected.getUseCase());
         txtDrugName.setText(DrugAdapter.DrugSelected.getName());
 
-        listDrugStore = new ArrayList<>();
-        listDrugStore.add(new DrugStore("Hoa Hồng","123 Nguyễn Văn Linh, phường 4, quận 7"));
-        listDrugStore.add(new DrugStore("Bạch Tuyết","34/5 Nguyễn Thị Nghĩa, phường Phạm Ngũ Lão, quận 1"));
-        listDrugStore.add(new DrugStore("Thúy Hằng","64 Trần Bình Trọng, phường 23, quận 5"));
-        listDrugStore.add(new DrugStore("Kim Tuyến","91/3 Lý Thái Tổ, phường 12, quận 10"));
-        listDrugStore.add(new DrugStore("Bà Tiên","434 Bạch Đằng, phường 14, quận Bình Thạnh"));
-        listDrugStore.add(new DrugStore("Hoa Hồng","123 Nguyễn Văn Linh, phường 4, quận 7"));
-        listDrugStore.add(new DrugStore("Bạch Tuyết","34/5 Nguyễn Thị Nghĩa, phường Phạm Ngũ Lão, quận 1"));
-        listDrugStore.add(new DrugStore("Thúy Hằng","64 Trần Bình Trọng, phường 23, quận 5"));
-        listDrugStore.add(new DrugStore("Kim Tuyến","91/3 Lý Thái Tổ, phường 12, quận 10"));
-        listDrugStore.add(new DrugStore("Bà Tiên","434 Bạch Đằng, phường 14, quận Bình Thạnh"));
-        listDrugStore.add(new DrugStore("Hoa Hồng","123 Nguyễn Văn Linh, phường 4, quận 7"));
-        listDrugStore.add(new DrugStore("Bạch Tuyết","34/5 Nguyễn Thị Nghĩa, phường Phạm Ngũ Lão, quận 1"));
-        listDrugStore.add(new DrugStore("Thúy Hằng","64 Trần Bình Trọng, phường 23, quận 5"));
-        listDrugStore.add(new DrugStore("Kim Tuyến","91/3 Lý Thái Tổ, phường 12, quận 10"));
-        listDrugStore.add(new DrugStore("Bà Tiên","434 Bạch Đằng, phường 14, quận Bình Thạnh"));
+        listPharmacy = new ArrayList<>();
+        listPharmacy.add(new Pharmacy("Hoa Hồng","123 Nguyễn Văn Linh, phường 4, quận 7"));
+        listPharmacy.add(new Pharmacy("Bạch Tuyết","34/5 Nguyễn Thị Nghĩa, phường Phạm Ngũ Lão, quận 1"));
+        listPharmacy.add(new Pharmacy("Thúy Hằng","64 Trần Bình Trọng, phường 23, quận 5"));
+        listPharmacy.add(new Pharmacy("Kim Tuyến","91/3 Lý Thái Tổ, phường 12, quận 10"));
+        listPharmacy.add(new Pharmacy("Bà Tiên","434 Bạch Đằng, phường 14, quận Bình Thạnh"));
+        listPharmacy.add(new Pharmacy("Hoa Hồng","123 Nguyễn Văn Linh, phường 4, quận 7"));
+        listPharmacy.add(new Pharmacy("Bạch Tuyết","34/5 Nguyễn Thị Nghĩa, phường Phạm Ngũ Lão, quận 1"));
+        listPharmacy.add(new Pharmacy("Thúy Hằng","64 Trần Bình Trọng, phường 23, quận 5"));
+        listPharmacy.add(new Pharmacy("Kim Tuyến","91/3 Lý Thái Tổ, phường 12, quận 10"));
+        listPharmacy.add(new Pharmacy("Bà Tiên","434 Bạch Đằng, phường 14, quận Bình Thạnh"));
+        listPharmacy.add(new Pharmacy("Hoa Hồng","123 Nguyễn Văn Linh, phường 4, quận 7"));
+        listPharmacy.add(new Pharmacy("Bạch Tuyết","34/5 Nguyễn Thị Nghĩa, phường Phạm Ngũ Lão, quận 1"));
+        listPharmacy.add(new Pharmacy("Thúy Hằng","64 Trần Bình Trọng, phường 23, quận 5"));
+        listPharmacy.add(new Pharmacy("Kim Tuyến","91/3 Lý Thái Tổ, phường 12, quận 10"));
+        listPharmacy.add(new Pharmacy("Bà Tiên","434 Bạch Đằng, phường 14, quận Bình Thạnh"));
 
-        drugAdapterStore = new DrugStoreAdapter(this,listDrugStore);
+        drugAdapterStore = new PharmacyAdapter(this, listPharmacy);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this,linearLayoutManager.getOrientation());

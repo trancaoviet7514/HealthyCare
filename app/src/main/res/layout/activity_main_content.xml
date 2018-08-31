@@ -11,7 +11,7 @@
     android:paddingRight="5dp"
     android:paddingTop="5dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.trancaoviet.NoodleDrug.Activities.MainActivity"
+    tools:context="com.example.trancaoviet.NoodleDrug.Activities.DrugSearchActivity"
     tools:showIn="@layout/app_bar_main"
     android:weightSum="1">
 
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edtSearch_drug"
-        android:hint="Bạn đang tìm thuốc gì?"
+        android:hint="@string/str_which_drug_do_you_search"
         android:layout_toLeftOf="@id/btnSearh_drug"/>
     <ImageButton
         android:layout_width="wrap_content"

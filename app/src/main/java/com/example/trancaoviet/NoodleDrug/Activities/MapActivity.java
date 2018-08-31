@@ -1,5 +1,6 @@
 package com.example.trancaoviet.NoodleDrug.Activities;
 
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -8,29 +9,42 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {
+import java.util.ArrayList;
 
-    MapView mapView;
-    GoogleMap mMap;
+public class MapActivity extends FragmentActivity implements OnMapReadyCallback {
+
+    private GoogleMap mMap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-
-        mapView = findViewById(R.id.mv_Map);
-        mapView.getMapAsync(this);
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the ic_camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        ArrayList<LatLng> listLatLng = new ArrayList<>();
+        listLatLng.add (new LatLng(10.766631, 106.695074));
+        listLatLng.add (new LatLng(10.767631, 106.696074));
+        listLatLng.add (new LatLng(10.768631, 106.699074));
+        listLatLng.add (new LatLng(10.769631, 106.694074));
+        listLatLng.add (new LatLng(10.761631, 106.692074));
+
+        for(LatLng latLng : listLatLng){
+            mMap.addMarker(new MarkerOptions().position(latLng).title("Pharmacy"));
+        }
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(listLatLng.get(0)));
+        mMap.moveCamera(CameraUpdateFactory.zoomTo(15f));
     }
 }
