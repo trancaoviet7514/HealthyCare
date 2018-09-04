@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 
 import com.example.trancaoviet.NoodleDrug.Object.Drug;
+import com.example.trancaoviet.NoodleDrug.Object.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
@@ -23,18 +24,62 @@ import java.util.ArrayList;
 
 public class Provider {
 
-    public static DatabaseReference mFirebaseDataBaseRef = FirebaseDatabase.getInstance().getReference();
-    public static StorageReference mFirebaseStorageRef = FirebaseStorage.getInstance().getReferenceFromUrl("gs://noodledrug.appspot.com");
-    private static int maxID;
-    private boolean isSignIn = false;
-    public static String UserName, Password;
+    private DatabaseReference mFirebaseDataBaseRef = FirebaseDatabase.getInstance().getReference();
+    private StorageReference mFirebaseStorageRef = FirebaseStorage.getInstance().getReferenceFromUrl("gs://noodledrug.appspot.com");
+    private int maxID;
+    private String UserName, Password;
+    private User user;
+    private static Provider instance = null;
 
+    public DatabaseReference getmFirebaseDataBaseRef() {
+        return mFirebaseDataBaseRef;
+    }
+
+    public void setmFirebaseDataBaseRef(DatabaseReference mFirebaseDataBaseRef) {
+        this.mFirebaseDataBaseRef = mFirebaseDataBaseRef;
+    }
+
+    public StorageReference getmFirebaseStorageRef() {
+        return mFirebaseStorageRef;
+    }
+
+    public void setmFirebaseStorageRef(StorageReference mFirebaseStorageRef) {
+        this.mFirebaseStorageRef = mFirebaseStorageRef;
+    }
+
+    public int getMaxID() {
+        return maxID;
+    }
+
+    public void setMaxID(int maxID) {
+        this.maxID = maxID;
+    }
+
+    public String getUserName() {
+        return UserName;
+    }
+
+    public void setUserName(String userName) {
+        UserName = userName;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String password) {
+        Password = password;
+    }
+
+    public static synchronized Provider getInstance() {
+        if(instance==null) {
+            return instance = new Provider();
+        } else {
+            return instance;
+        }
+    }
 
     public Provider() {
-
-        if(!isSignIn){
-            UserName = "UN_SIGN_IN";
-        }
 
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
@@ -52,7 +97,7 @@ public class Provider {
 
     }
 
-    public void getAllDrug(final DrugChangeCallBack drugChangeCallBack){
+    public void getAllDrug(final DrugChangeCallBack drugChangeCallBack) {
             final ArrayList<Drug> listDrug = new ArrayList<>();
             ValueEventListener myValueEventListener = new ValueEventListener(){
                 @Override
@@ -73,7 +118,7 @@ public class Provider {
             mFirebaseDataBaseRef.child("drug_list").addListenerForSingleValueEvent(myValueEventListener);
     }
 
-    public void getAllDrugImage(int drugID, final DrugImageCallBack drugImageCallBack){
+    public void getAllDrugImage(int drugID, final DrugImageCallBack drugImageCallBack) {
 
         File localFile = null;
         try {
@@ -95,7 +140,7 @@ public class Provider {
         });
     }
 
-    public static void insertDrug(Drug drug){
+    public void insertDrug(Drug drug){
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         drug.getImage().compress(Bitmap.CompressFormat.JPEG, 100, baos);

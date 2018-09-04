@@ -11,28 +11,15 @@
     android:paddingRight="5dp"
     android:paddingTop="5dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.trancaoviet.NoodleDrug.Activities.DrugSearchActivity"
+    tools:context="com.example.trancaoviet.NoodleDrug.Activities.MainActivity"
     tools:showIn="@layout/app_bar_main"
     android:weightSum="1">
 
-    <EditText
+    <FrameLayout
+        android:id="@+id/fragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/edtSearch_drug"
-        android:hint="@string/str_which_drug_do_you_search"
-        android:layout_toLeftOf="@id/btnSearh_drug"/>
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/search"
-        android:id="@+id/btnSearh_drug"
-        android:layout_alignParentEnd="true"
-        android:background="@null"/>
+        android:layout_height="match_parent">
+    </FrameLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/edtSearch_drug"
-        android:id="@+id/rcvTask" />
 </RelativeLayout>
 

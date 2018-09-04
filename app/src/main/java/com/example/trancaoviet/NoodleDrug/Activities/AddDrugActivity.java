@@ -29,6 +29,8 @@ import java.util.Date;
 
 public class AddDrugActivity extends AppCompatActivity {
 
+    Provider provider = null;
+
     private static final int REQUEST_GET_PHOTO = 1;
     private static final int REQUEST_TAKE_PHOTO = 2;
     private static final int REQUEST_SCAN_TEXT_NAME = 3;
@@ -46,6 +48,8 @@ public class AddDrugActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_drug);
+
+        provider = Provider.getInstance();
 
         btnTakePhoto = findViewById(R.id.btn_drug_add_photo);
         btnLoadPhoto = findViewById(R.id.btn_drug_load_image);
@@ -107,7 +111,7 @@ public class AddDrugActivity extends AppCompatActivity {
                    myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
                 }
                 Drug newDrug = new Drug(drugName, component, useCase, drugPrice, myBitmap);
-                Provider.insertDrug(newDrug);
+                provider.insertDrug(newDrug);
             }
         });
 

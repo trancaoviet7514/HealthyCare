@@ -40,18 +40,19 @@ import java.util.Arrays;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button btnLogin, btnSignIn, btnExit;
-    TextInputEditText edtUsername, edtPassword;
-    DataSnapshot mDataSnapshot_User;
+    private Button btnLogin, btnSignIn, btnExit;
+    private TextInputEditText edtUsername, edtPassword;
+    private DataSnapshot mDataSnapshot_User;
 
-    Dialog dialogNoti;
-    TextView Noti, btnDismissDialog;
+    private Dialog dialogNoti;
+    private TextView Noti, btnDismissDialog;
 
     //login with google
-    GoogleSignInClient mGoogleSignInClient;
+    private GoogleSignInClient mGoogleSignInClient;
 
     //login with facebook
-    CallbackManager callbackManager;
+    private CallbackManager callbackManager;
+    private Provider provider = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -61,6 +62,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mapControl();
         addEventForControl();
 
+        provider = Provider.getInstance();
         loadAllUser();
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -95,12 +97,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 // Application code
                                 try {
                                     String Username = object.getString("email");
-                                    Provider.UserName = Username.substring(0,Username.indexOf('.'));
-                                    Provider.Password = "";
-                                    Provider.mFirebaseDataBaseRef.child("User").child( Provider.UserName ).child("Password").setValue( true );
-                                    Provider.mFirebaseDataBaseRef.child("User").child( Provider.UserName ).child("MaxID").setValue( 0 );
+                                    provider.setUserName ( Username.substring ( 0, Username.indexOf('.') ) );
+                                    provider.setPassword("");
+                                    provider.getmFirebaseDataBaseRef().child("User").child( provider.getPassword() ).child("Password").setValue( true );
+                                    provider.getmFirebaseDataBaseRef().child("User").child( provider.getUserName() ).child("MaxID").setValue( 0 );
 
-                                    startActivity(new Intent(LoginActivity.this,DrugSearchActivity.class));
+                                    startActivity(new Intent(LoginActivity.this,MainActivity.class));
 
                                 } catch (JSONException e) {
                                     e.printStackTrace();
@@ -157,7 +159,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         };
 
-        Provider.mFirebaseDataBaseRef.child("User").addListenerForSingleValueEvent(valueEventListener);
+        provider.getmFirebaseDataBaseRef().child("User").addListenerForSingleValueEvent(valueEventListener);
 
     }
 
@@ -238,13 +240,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 if( userNameInvalidate( Username, Password, mDataSnapshot_User) ) {
 
-                    Provider.mFirebaseDataBaseRef.child("User").child( Username ).child("Password").setValue( Password );
-                    Provider.mFirebaseDataBaseRef.child("User").child( Username ).child("MaxID").setValue( 0 );
+                    provider.getmFirebaseDataBaseRef().child("User").child( Username ).child("Password").setValue( Password );
+                    provider.getmFirebaseDataBaseRef().child("User").child( Username ).child("MaxID").setValue( 0 );
                     Noti.setText("Đăng kí thành công");
                     dialogNoti.show();
-                    Provider.UserName = edtUsername.getText().toString();
-                    Provider.Password = edtPassword.getText().toString();
-                    startActivity(new Intent(LoginActivity.this, DrugSearchActivity.class ) );
+                    provider.setUserName ( edtUsername.getText().toString() );
+                    provider.setPassword ( edtPassword.getText().toString() );
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class ) );
 
                 }
                 else {
@@ -259,9 +261,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void onClick(View view) {
                 if( checkLogin( edtUsername.getText().toString(), edtPassword.getText().toString(), mDataSnapshot_User )  ) {
 
-                    Provider.UserName = edtUsername.getText().toString();
-                    Provider.Password = edtPassword.getText().toString();
-                    startActivity(new Intent(LoginActivity.this,DrugSearchActivity.class));
+                    provider.setUserName ( edtUsername.getText().toString() );
+                    provider.setPassword ( edtPassword.getText().toString() );
+                    startActivity(new Intent(LoginActivity.this,MainActivity.class));
 
                 } else {
                     Noti.setText("Tên đăng nhập hoặc mật khẩu không đúng");
@@ -302,14 +304,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Uri url = account.getPhotoUrl();
             String displayName = account.getDisplayName();
             //account.
-            Provider.UserName = email.substring(0,email.indexOf('.'));
+            provider.setUserName( email.substring ( 0,email.indexOf('.') ) );
 
-            if(!checkEmailisReallyhasData(Provider.UserName,mDataSnapshot_User)){
-                Provider.mFirebaseDataBaseRef.child("User").child( Provider.UserName ).child("Password").setValue( true );
-                Provider.mFirebaseDataBaseRef.child("User").child( Provider.UserName ).child("MaxID").setValue( 0 );
+            if(!checkEmailisReallyhasData(provider.getUserName(),mDataSnapshot_User)){
+                provider.getmFirebaseDataBaseRef().child("User").child( provider.getUserName() ).child("Password").setValue( true );
+                provider.getmFirebaseDataBaseRef().child("User").child( provider.getUserName() ).child("MaxID").setValue( 0 );
             }
 
-            startActivity(new Intent(LoginActivity.this,DrugSearchActivity.class));
+            startActivity(new Intent(LoginActivity.this,MainActivity.class));
 
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.

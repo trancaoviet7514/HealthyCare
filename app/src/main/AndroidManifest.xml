@@ -16,6 +16,7 @@
         android:required="true" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -41,10 +42,14 @@
             android:value="AIzaSyAWPGgsr1sl_-aRCWbhVMlTASwtRKoeVwU" />
 
         <activity
-            android:name=".Activities.DrugSearchActivity"
+            android:name=".Activities.MainActivity"
             android:label="Tìm kiếm thuốc"
             android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".Activities.LoginActivity"
@@ -84,17 +89,7 @@
             android:value="ocr" />
 
         <activity android:name=".Activities.ScanText" />
-        <activity android:name=".Activities.MainActivity" />
-        <activity android:name=".Activities.TestBaseActivity1" />
-        <activity android:name=".Activities.TestBaseActivity"
-            android:theme="@style/AppTheme2">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
