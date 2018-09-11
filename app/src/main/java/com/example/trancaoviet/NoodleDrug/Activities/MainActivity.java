@@ -21,6 +21,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.trancaoviet.NoodleDrug.Fragment.SearchDrugFragment;
+import com.example.trancaoviet.NoodleDrug.Helper.BottomNavigationViewHelper;
 import com.example.trancaoviet.NoodleDrug.R;
 import java.util.Locale;
 
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 //        Map bottom navigation view and add Listener
         bottomNavigationView = findViewById(R.id.bottom_navigation);
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
