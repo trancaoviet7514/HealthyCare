@@ -1,6 +1,7 @@
 package com.example.trancaoviet.NoodleDrug.Activities;
 
 import android.app.Dialog;
+import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -19,8 +20,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.trancaoviet.NoodleDrug.Fragment.HomeFragment;
+import com.example.trancaoviet.NoodleDrug.Fragment.SchedulesFragment;
 import com.example.trancaoviet.NoodleDrug.Fragment.SearchDrugFragment;
+import com.example.trancaoviet.NoodleDrug.Fragment.TestFragment;
 import com.example.trancaoviet.NoodleDrug.Helper.BottomNavigationViewHelper;
 import com.example.trancaoviet.NoodleDrug.R;
 import java.util.Locale;
@@ -35,9 +40,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FragmentTransaction mft = getFragmentManager().beginTransaction();
-        mft.add(R.id.fragment, new SearchDrugFragment());
-        mft.commit();
+//        FragmentTransaction mft = getFragmentManager().beginTransaction();
+//        mft.add(R.id.fragment, new SearchDrugFragment());
+//        mft.commit();
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -59,18 +64,54 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int idItem = item.getItemId();
+                Fragment fragment = null;
                 switch (idItem) {
                     case R.id.action_home:
                     {
                         toolbar.setTitle("Home");
-
+                        fragment = new HomeFragment();
+                    }
+                    break;
+                    case R.id.action_schedules:
+                    {
+                        toolbar.setTitle("Schedules");
+                        fragment = new SchedulesFragment();
+                    }
+                    break;
+                    case R.id.action_test1:
+                    {
+                        toolbar.setTitle("Test1");
+                        fragment = new TestFragment("1");
+                    }
+                    break;
+                    case R.id.action_test2:
+                    {
+                        toolbar.setTitle("Test2");
+                        fragment = new TestFragment("2");
+                    }
+                    break;
+                    case R.id.action_test3:
+                    {
+                        toolbar.setTitle("Test3");
+                        fragment = new TestFragment("3");
                     }
                     break;
                 }
-                return false;
+                return loadFragment(fragment);
             }
         });
 
+    }
+
+    private boolean loadFragment(Fragment fragment) {
+        if (fragment!=null) {
+            getFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container,fragment)
+                    .commit();
+            return true;
+        }
+        return false;
     }
 
     @Override
