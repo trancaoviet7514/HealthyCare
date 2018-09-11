@@ -4,12 +4,12 @@
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/drawable-hdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/layout_design_navigation_item_separator.xml.flat",
-        "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/389afd63d4eda528d94e9d927baf2d05/res/layout/design_navigation_item_separator.xml"
-    },
-    {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_com_facebook_tooltip_black_background.9.png.flat",
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/facebook-login-4.35.0.aar/3d0ba65d8b49edfe56acbe1de44ac089/res/drawable-mdpi-v4/com_facebook_tooltip_black_background.9.png"
+    },
+    {
+        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/layout_design_navigation_item_separator.xml.flat",
+        "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/389afd63d4eda528d94e9d927baf2d05/res/layout/design_navigation_item_separator.xml"
     },
     {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_messenger_bubble_small_white.png.flat",
@@ -24,12 +24,12 @@
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/drawable-xxxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/layout_abc_screen_toolbar.xml.flat",
-        "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/layout/abc_screen_toolbar.xml"
-    },
-    {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/drawable-xxhdpi-v4/abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/layout_abc_screen_toolbar.xml.flat",
+        "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/layout/abc_screen_toolbar.xml"
     },
     {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/anim_abc_slide_in_bottom.xml.flat",
@@ -74,6 +74,10 @@
     {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/layout_select_dialog_multichoice_material.xml.flat",
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/layout/select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/layout_fragment_test.xml.flat",
+        "source": "/home/data/HealthyCare/app/src/main/res/layout/fragment_test.xml"
     },
     {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/layout_abc_alert_dialog_material.xml.flat",
@@ -136,20 +140,20 @@
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/29c7ed3cc933b036b21ee8314a8cb4ff/res/layout-v21/notification_template_icon_group.xml"
     },
     {
-        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/color_abc_background_cache_hint_selector_material_light.xml.flat",
-        "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/color/abc_background_cache_hint_selector_material_light.xml"
-    },
-    {
-        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/layout-v21_notification_action.xml.flat",
-        "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/29c7ed3cc933b036b21ee8314a8cb4ff/res/layout-v21/notification_action.xml"
-    },
-    {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/drawable-xxhdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/drawable-mdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/layout-v21_notification_action.xml.flat",
+        "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/29c7ed3cc933b036b21ee8314a8cb4ff/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/color_abc_background_cache_hint_selector_material_light.xml.flat",
+        "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/color/abc_background_cache_hint_selector_material_light.xml"
     },
     {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/layout_design_layout_snackbar.xml.flat",
@@ -192,16 +196,16 @@
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/facebook-messenger-4.35.0.aar/022f230f1e4d2b9f73ebd72cab31768a/res/drawable/messenger_button_white_bg_round.xml"
     },
     {
-        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable_notification_icon_background.xml.flat",
-        "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/29c7ed3cc933b036b21ee8314a8cb4ff/res/drawable/notification_icon_background.xml"
+        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/layout_abc_popup_menu_header_item_layout.xml.flat",
+        "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/layout/abc_popup_menu_header_item_layout.xml"
     },
     {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/color_com_facebook_button_text_color.xml.flat",
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/facebook-common-4.35.0.aar/2dfdb3afe1357af32de1f05c47efb431/res/color/com_facebook_button_text_color.xml"
     },
     {
-        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/layout_abc_popup_menu_header_item_layout.xml.flat",
-        "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/layout/abc_popup_menu_header_item_layout.xml"
+        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable_notification_icon_background.xml.flat",
+        "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/29c7ed3cc933b036b21ee8314a8cb4ff/res/drawable/notification_icon_background.xml"
     },
     {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/xml_file_paths.xml.flat",
@@ -268,12 +272,12 @@
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/drawable-hdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
     },
     {
-        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-v21_abc_action_bar_item_background_material.xml.flat",
-        "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/drawable-v21/abc_action_bar_item_background_material.xml"
-    },
-    {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_access_time_white_24dp.png.flat",
         "source": "/home/data/HealthyCare/app/build/generated/res/pngs/debug/drawable-hdpi/ic_access_time_white_24dp.png"
+    },
+    {
+        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-v21_abc_action_bar_item_background_material.xml.flat",
+        "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/drawable-v21/abc_action_bar_item_background_material.xml"
     },
     {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/layout_messenger_button_send_white_large.xml.flat",
@@ -560,16 +564,16 @@
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/drawable-xxhdpi-v4/abc_list_focused_holo.9.png"
     },
     {
+        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_more_white_24dp.xml.flat",
+        "source": "/home/data/HealthyCare/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_more_white_24dp.xml"
+    },
+    {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable_map.png.flat",
         "source": "/home/data/HealthyCare/app/src/main/res/drawable/map.png"
-    },
-    {
-        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_more_white_24dp.xml.flat",
-        "source": "/home/data/HealthyCare/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_more_white_24dp.xml"
     },
     {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_design_ic_visibility_off.png.flat",
@@ -674,6 +678,10 @@
     {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_googleg_standard_color_18.png.flat",
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/038704de5ef091305f709ec59e550322/res/drawable-xhdpi-v4/googleg_standard_color_18.png"
+    },
+    {
+        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable_bottom_navigation_colors.xml.flat",
+        "source": "/home/data/HealthyCare/app/src/main/res/drawable/bottom_navigation_colors.xml"
     },
     {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/layout_fragment_home.xml.flat",
@@ -928,12 +936,12 @@
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/389afd63d4eda528d94e9d927baf2d05/res/color/design_error.xml"
     },
     {
-        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
-        "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/drawable-xhdpi-v4/abc_popup_background_mtrl_mult.9.png"
-    },
-    {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_favorite_white_24dp.png.flat",
         "source": "/home/data/HealthyCare/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_favorite_white_24dp.png"
+    },
+    {
+        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
+        "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/drawable-xhdpi-v4/abc_popup_background_mtrl_mult.9.png"
     },
     {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
@@ -1256,12 +1264,12 @@
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/drawable/abc_ic_clear_material.xml"
     },
     {
-        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable_tooltip_frame_dark.xml.flat",
-        "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/drawable/tooltip_frame_dark.xml"
-    },
-    {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/drawable-mdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable_tooltip_frame_dark.xml.flat",
+        "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/drawable/tooltip_frame_dark.xml"
     },
     {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
@@ -1324,12 +1332,12 @@
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/drawable-xxhdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
     },
     {
-        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable_com_facebook_auth_dialog_background.xml.flat",
-        "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/facebook-common-4.35.0.aar/2dfdb3afe1357af32de1f05c47efb431/res/drawable/com_facebook_auth_dialog_background.xml"
-    },
-    {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_favorite_white_24dp.png.flat",
         "source": "/home/data/HealthyCare/app/build/generated/res/pngs/debug/drawable-ldpi/ic_favorite_white_24dp.png"
+    },
+    {
+        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable_com_facebook_auth_dialog_background.xml.flat",
+        "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/facebook-common-4.35.0.aar/2dfdb3afe1357af32de1f05c47efb431/res/drawable/com_facebook_auth_dialog_background.xml"
     },
     {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/color_abc_hint_foreground_material_dark.xml.flat",
@@ -2172,6 +2180,10 @@
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/drawable-mdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
+        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/layout_fragment_schedules.xml.flat",
+        "source": "/home/data/HealthyCare/app/src/main/res/layout/fragment_schedules.xml"
+    },
+    {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_light_focused.xml.flat",
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/038704de5ef091305f709ec59e550322/res/drawable/common_google_signin_btn_icon_light_focused.xml"
     },
@@ -2324,16 +2336,16 @@
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/29c7ed3cc933b036b21ee8314a8cb4ff/res/drawable-hdpi-v4/notification_bg_normal_pressed.9.png"
     },
     {
+        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_access_time_white_24dp.png.flat",
+        "source": "/home/data/HealthyCare/app/build/generated/res/pngs/debug/drawable-ldpi/ic_access_time_white_24dp.png"
+    },
+    {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable_design_fab_background.xml.flat",
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/389afd63d4eda528d94e9d927baf2d05/res/drawable/design_fab_background.xml"
     },
     {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/drawable-xxhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
-    },
-    {
-        "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_access_time_white_24dp.png.flat",
-        "source": "/home/data/HealthyCare/app/build/generated/res/pngs/debug/drawable-ldpi/ic_access_time_white_24dp.png"
     },
     {
         "merged": "/home/data/HealthyCare/app/build/intermediates/res/merged/debug/drawable-ldrtl-hdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
