@@ -64,7 +64,6 @@
 
         <activity
             android:name="com.example.trancaoviet.NoodleDrug.Activities.MainActivity"
-            android:label="Tìm kiếm thuốc"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

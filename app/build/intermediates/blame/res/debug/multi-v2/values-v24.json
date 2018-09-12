@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/data/HealthyCare/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
+            "outputFile": "/home/cpu10787/Documents/MyDATA/HealthyCare/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/values-v24/values-v24.xml",
+                    "source": "/home/cpu10787/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/7d81f24df07660febb87c94c17775edf/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/e3f404292352ec9187d22dcfbc17d275/res/values-v24/values-v24.xml",
+                    "source": "/home/cpu10787/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/3fd3e4e7a17678f65d639523fd68f038/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

@@ -1,48 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/data/HealthyCare/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
+            "outputFile": "/home/cpu10787/Documents/MyDATA/HealthyCare/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
             "map": [
                 {
-                    "source": "/home/data/HealthyCare/app/src/main/res/values-v21/styles.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "17",
-                        "endLines": "7",
-                        "endColumns": "12",
-                        "endOffsets": "313"
-                    },
-                    "to": {
-                        "startLines": "6",
-                        "startColumns": "4",
-                        "startOffsets": "354",
-                        "endLines": "11",
-                        "endColumns": "12",
-                        "endOffsets": "650"
-                    }
-                },
-                {
-                    "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/e3f404292352ec9187d22dcfbc17d275/res/values-v21/values-v21.xml",
-                    "from": {
-                        "startLines": "2,5,8,11",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,223,386,554",
-                        "endLines": "4,7,10,13",
-                        "endColumns": "12,12,12,12",
-                        "endOffsets": "218,381,549,716"
-                    },
-                    "to": {
-                        "startLines": "275,278,282,286",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "20113,20281,20570,20866",
-                        "endLines": "277,280,284,288",
-                        "endColumns": "12,12,12,12",
-                        "endOffsets": "20276,20439,20733,21028"
-                    }
-                },
-                {
-                    "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/values-v21/values-v21.xml",
+                    "source": "/home/cpu10787/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/7d81f24df07660febb87c94c17775edf/res/values-v21/values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,19,20,21,22,24,26,27,28,29,30,32,34,36,38,40,42,43,48,50,52,53,54,56,58,59,60,61,62,63,107,110,154,157,160,162,164,166,169,171,174,175,176,179,180,181,182,183,184,187,188,190,192,194,196,200,202,203,204,205,207,211,213,215,216,217,218,219,221,222,223,233,234,235,247",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -61,7 +23,45 @@
                     }
                 },
                 {
-                    "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/29c7ed3cc933b036b21ee8314a8cb4ff/res/values-v21/values-v21.xml",
+                    "source": "/home/cpu10787/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/3fd3e4e7a17678f65d639523fd68f038/res/values-v21/values-v21.xml",
+                    "from": {
+                        "startLines": "2,5,8,11",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,223,386,554",
+                        "endLines": "4,7,10,13",
+                        "endColumns": "12,12,12,12",
+                        "endOffsets": "218,381,549,716"
+                    },
+                    "to": {
+                        "startLines": "275,278,282,286",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "20113,20281,20570,20866",
+                        "endLines": "277,280,284,288",
+                        "endColumns": "12,12,12,12",
+                        "endOffsets": "20276,20439,20733,21028"
+                    }
+                },
+                {
+                    "source": "/home/cpu10787/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/3615570bf476c83e87647bf9fbaefa6d/res/values-v21/values-v21.xml",
+                    "from": {
+                        "startLines": "2,5",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,266",
+                        "endLines": "4,5",
+                        "endColumns": "12,96",
+                        "endOffsets": "261,358"
+                    },
+                    "to": {
+                        "startLines": "170,234",
+                        "startColumns": "4,4",
+                        "startOffsets": "12875,17425",
+                        "endLines": "172,234",
+                        "endColumns": "12,96",
+                        "endOffsets": "13081,17517"
+                    }
+                },
+                {
+                    "source": "/home/cpu10787/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/8882dda4772346d69ffbad9396ade39c/res/values-v21/values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -80,22 +80,22 @@
                     }
                 },
                 {
-                    "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/389afd63d4eda528d94e9d927baf2d05/res/values-v21/values-v21.xml",
+                    "source": "/home/cpu10787/Documents/MyDATA/HealthyCare/app/src/main/res/values-v21/styles.xml",
                     "from": {
-                        "startLines": "2,5",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,266",
-                        "endLines": "4,5",
-                        "endColumns": "12,96",
-                        "endOffsets": "261,358"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "17",
+                        "endLines": "7",
+                        "endColumns": "12",
+                        "endOffsets": "313"
                     },
                     "to": {
-                        "startLines": "170,234",
-                        "startColumns": "4,4",
-                        "startOffsets": "12875,17425",
-                        "endLines": "172,234",
-                        "endColumns": "12,96",
-                        "endOffsets": "13081,17517"
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "354",
+                        "endLines": "11",
+                        "endColumns": "12",
+                        "endOffsets": "650"
                     }
                 }
             ]

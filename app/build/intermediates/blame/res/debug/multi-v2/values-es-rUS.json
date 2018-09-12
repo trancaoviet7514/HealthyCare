@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/data/HealthyCare/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-es-rUS/values-es-rUS.xml",
+            "outputFile": "/home/cpu10787/Documents/MyDATA/HealthyCare/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-es-rUS/values-es-rUS.xml",
             "map": [
                 {
-                    "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/29c7ed3cc933b036b21ee8314a8cb4ff/res/values-es-rUS/values-es-rUS.xml",
+                    "source": "/home/cpu10787/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/8882dda4772346d69ffbad9396ade39c/res/values-es-rUS/values-es-rUS.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/ef6649edc2dbe4e336899a91078f611e/res/values-es-rUS/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "251",
-                        "endColumns": "204",
-                        "endOffsets": "455"
-                    },
-                    "to": {
-                        "startLines": "27",
-                        "startColumns": "4",
-                        "startOffsets": "3087",
-                        "endColumns": "204",
-                        "endOffsets": "3287"
-                    }
-                },
-                {
-                    "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/values-es-rUS/values-es-rUS.xml",
+                    "source": "/home/cpu10787/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/7d81f24df07660febb87c94c17775edf/res/values-es-rUS/values-es-rUS.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/038704de5ef091305f709ec59e550322/res/values-es-rUS/values.xml",
+                    "source": "/home/cpu10787/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/21430f3ba6683ae95c43d2c6ba4f6577/res/values-es-rUS/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -69,6 +52,23 @@
                         "startOffsets": "1894,2004,2202,2336,2446,2666,2799,2952,3292,3522,3633,3834,3969,4205,4413,4513,4605",
                         "endColumns": "109,197,133,109,219,132,152,134,229,110,200,134,235,207,99,91,106",
                         "endOffsets": "1999,2197,2331,2441,2661,2794,2947,3082,3517,3628,3829,3964,4200,4408,4508,4600,4707"
+                    }
+                },
+                {
+                    "source": "/home/cpu10787/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/9e5996dceac61bd2f3fecc83d5c491d4/res/values-es-rUS/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "251",
+                        "endColumns": "204",
+                        "endOffsets": "455"
+                    },
+                    "to": {
+                        "startLines": "27",
+                        "startColumns": "4",
+                        "startOffsets": "3087",
+                        "endColumns": "204",
+                        "endOffsets": "3287"
                     }
                 }
             ]

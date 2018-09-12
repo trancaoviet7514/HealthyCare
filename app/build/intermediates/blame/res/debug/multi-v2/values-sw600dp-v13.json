@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/data/HealthyCare/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "/home/cpu10787/Documents/MyDATA/HealthyCare/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "source": "/home/cpu10787/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/7d81f24df07660febb87c94c17775edf/res/values-sw600dp-v13/values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/389afd63d4eda528d94e9d927baf2d05/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "source": "/home/cpu10787/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/3615570bf476c83e87647bf9fbaefa6d/res/values-sw600dp-v13/values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",

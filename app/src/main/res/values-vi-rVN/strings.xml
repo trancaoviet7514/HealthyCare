@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MyHelper</string>
+    <string name="app_name">Healthy Care</string>
     <string name="cancel">Hủy</string>
     <string name="title_activity_login">Đăng nhập</string>
     <string name="ok">Đồng ý</string>
@@ -16,9 +16,9 @@
     <string name="time">Giờ</string>
     <string name="notifycation">Thông báo</string>
     <string name="save">Lưu</string>
-    <string name="search_drug">Việc sắp đến</string>
-    <string name="search_sick">Việc đã hoàn thành</string>
-    <string name="find_doctor">Việc chưa hoàn thành</string>
+    <string name="search_drug">Tra cứu thuốc</string>
+    <string name="search_sick">Tra cứu bệnh</string>
+    <string name="find_doctor">Tìm bác sĩ gia đình</string>
     <string name="language">Ngôn ngữ</string>
     <string name="theme">Giao diện</string>
     <string name="log_out">Đăng xuất</string>

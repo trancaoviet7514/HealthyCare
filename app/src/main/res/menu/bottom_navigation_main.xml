@@ -2,36 +2,36 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/action_chat"
+        android:enabled="true"
+        android:icon="@drawable/ic_chat_black_24dp"
+        android:title="chat"
+        app:showAsAction="ifRoom"
+        />
+    <item
+        android:id="@+id/action_social"
+        android:enabled="true"
+        android:icon="@drawable/ic_public_black_24dp"
+        android:title="social"
+        app:showAsAction="ifRoom"
+        />
+    <item
         android:id="@+id/action_home"
         android:enabled="true"
-        android:icon="@drawable/ic_favorite_white_24dp"
-        android:title="@string/text_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="home"
         app:showAsAction="ifRoom"
         />
     <item
-        android:id="@+id/action_schedules"
+        android:id="@+id/action_service"
         android:enabled="true"
-        android:icon="@drawable/ic_access_time_white_24dp"
-        android:title="@string/text_schedules"
         app:showAsAction="ifRoom"
-        />
+        android:icon="@drawable/ic_card_travel_black_24dp"
+        android:title="service" />
     <item
-        android:id="@+id/action_test1"
+        android:id="@+id/action_profile"
         android:enabled="true"
-        android:icon="@drawable/ic_more_white_24dp"
-        android:title="test1"
+        android:icon="@drawable/ic_person_black_24dp"
         app:showAsAction="ifRoom"
-        />
-    <item
-        android:id="@+id/action_test2"
-        android:enabled="true"
-        app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_more_white_24dp"
-        android:title="test2" />
-    <item
-        android:id="@+id/action_test3"
-        android:enabled="true"
-        android:icon="@drawable/ic_more_white_24dp"
-        app:showAsAction="ifRoom"
-        android:title="test3" />
+        android:title="profile" />
 </menu>

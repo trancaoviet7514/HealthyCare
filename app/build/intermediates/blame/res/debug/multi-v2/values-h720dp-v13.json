@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/data/HealthyCare/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
+            "outputFile": "/home/cpu10787/Documents/MyDATA/HealthyCare/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "source": "/home/cpu10787/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/7d81f24df07660febb87c94c17775edf/res/values-h720dp-v13/values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -2,7 +2,6 @@ package com.example.trancaoviet.NoodleDrug.Activities;
 
 import android.app.Dialog;
 import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -20,12 +19,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.trancaoviet.NoodleDrug.Fragment.ChatFragment;
 import com.example.trancaoviet.NoodleDrug.Fragment.HomeFragment;
-import com.example.trancaoviet.NoodleDrug.Fragment.SchedulesFragment;
-import com.example.trancaoviet.NoodleDrug.Fragment.SearchDrugFragment;
-import com.example.trancaoviet.NoodleDrug.Fragment.TestFragment;
+import com.example.trancaoviet.NoodleDrug.Fragment.ProfileFragment;
+import com.example.trancaoviet.NoodleDrug.Fragment.ServiceFragment;
+import com.example.trancaoviet.NoodleDrug.Fragment.SocialFragment;
 import com.example.trancaoviet.NoodleDrug.Helper.BottomNavigationViewHelper;
 import com.example.trancaoviet.NoodleDrug.R;
 import java.util.Locale;
@@ -39,10 +38,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-//        FragmentTransaction mft = getFragmentManager().beginTransaction();
-//        mft.add(R.id.fragment, new SearchDrugFragment());
-//        mft.commit();
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -60,47 +55,42 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        Map bottom navigation view and add Listener
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+        setBottomNavigationViewListener();
+
+        bottomNavigationView.setSelectedItemId(R.id.action_home);
+    }
+
+    private void setBottomNavigationViewListener(){
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int idItem = item.getItemId();
                 Fragment fragment = null;
                 switch (idItem) {
+                    case R.id.action_chat:
+                        toolbar.setTitle("Chat");
+                        fragment = new ChatFragment();
+                        break;
+                    case R.id.action_social:
+                        toolbar.setTitle("Social");
+                        fragment = new SocialFragment();
+                        break;
                     case R.id.action_home:
-                    {
                         toolbar.setTitle("Home");
                         fragment = new HomeFragment();
-                    }
-                    break;
-                    case R.id.action_schedules:
-                    {
-                        toolbar.setTitle("Schedules");
-                        fragment = new SchedulesFragment();
-                    }
-                    break;
-                    case R.id.action_test1:
-                    {
-                        toolbar.setTitle("Test1");
-                        fragment = new TestFragment("1");
-                    }
-                    break;
-                    case R.id.action_test2:
-                    {
-                        toolbar.setTitle("Test2");
-                        fragment = new TestFragment("2");
-                    }
-                    break;
-                    case R.id.action_test3:
-                    {
-                        toolbar.setTitle("Test3");
-                        fragment = new TestFragment("3");
-                    }
-                    break;
+                        break;
+                    case R.id.action_service:
+                        toolbar.setTitle("Service");
+                        fragment = new ServiceFragment();
+                        break;
+                    case R.id.action_profile:
+                        toolbar.setTitle("Profile");
+                        fragment = new ProfileFragment();
+                        break;
                 }
                 return loadFragment(fragment);
             }
         });
-
     }
 
     private boolean loadFragment(Fragment fragment) {
@@ -243,8 +233,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             startActivity(new Intent (this, LoginActivity.class));
 
-        } else if(id == R.id.nav_add_drug) {
-            startActivity(new Intent (this, AddDrugActivity.class));
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

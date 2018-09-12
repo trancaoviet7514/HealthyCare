@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/data/HealthyCare/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sr/values-sr.xml",
+            "outputFile": "/home/cpu10787/Documents/MyDATA/HealthyCare/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sr/values-sr.xml",
             "map": [
                 {
-                    "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/29c7ed3cc933b036b21ee8314a8cb4ff/res/values-sr/values-sr.xml",
+                    "source": "/home/cpu10787/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/8882dda4772346d69ffbad9396ade39c/res/values-sr/values-sr.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/ef6649edc2dbe4e336899a91078f611e/res/values-sr/values.xml",
+                    "source": "/home/cpu10787/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/9e5996dceac61bd2f3fecc83d5c491d4/res/values-sr/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/038704de5ef091305f709ec59e550322/res/values-sr/values.xml",
+                    "source": "/home/cpu10787/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/21430f3ba6683ae95c43d2c6ba4f6577/res/values-sr/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -55,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "/home/cpu60058/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ba78a6326565b749a1683bbe0d2adb46/res/values-sr/values-sr.xml",
+                    "source": "/home/cpu10787/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/7d81f24df07660febb87c94c17775edf/res/values-sr/values-sr.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
