@@ -72,6 +72,8 @@
     <string name="str_widget">Widget</string>
     <string name="str_system">System</string>
     <string name="str_search_health_insurance">Search health insurance</string>
+    <string name="str_user_name_default">Your name</string>
+    <string name="str_login">Login</string>
 
 
 </resources>
