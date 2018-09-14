@@ -29,4 +29,13 @@
         <item name="android:colorBackground">#fffff0</item>
     </style>
 
+    <style name="FacebookLoginButton">
+        <item name="android:textSize">20dp</item>
+        <item name="android:background">@drawable/while_background_retangle_round_corner</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+
+    </style>
+
 </resources>

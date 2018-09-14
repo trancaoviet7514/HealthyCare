@@ -17,9 +17,11 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.example.trancaoviet.NoodleDrug.DataIO.Provider;
 import com.example.trancaoviet.NoodleDrug.Fragment.ChatFragment;
 import com.example.trancaoviet.NoodleDrug.Fragment.HomeFragment;
 import com.example.trancaoviet.NoodleDrug.Fragment.ProfileFragment;
@@ -33,11 +35,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private BottomNavigationView bottomNavigationView;
     private Toolbar toolbar;
+    private ImageView imgAvartar;
+    private TextView txtUserName;
+    private Provider provider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        provider = Provider.getInstance();
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -52,15 +59,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
 
+        imgAvartar = navigationView.getHeaderView(0).findViewById(R.id.img_avatar);
+        txtUserName = navigationView.getHeaderView(0).findViewById(R.id.txt_user_name);
+
 //        Map bottom navigation view and add Listener
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         setBottomNavigationViewListener();
 
-        bottomNavigationView.setSelectedItemId(R.id.action_home);
+        if(provider.isLogin() ) {
+            bottomNavigationView.setSelectedItemId(R.id.action_home);
+            txtUserName.setText(provider.getUser().getEmail() );
+            imgAvartar.setImageBitmap(provider.getUser().getAvatar());
+        }
     }
 
-    private void setBottomNavigationViewListener(){
+    private void setBottomNavigationViewListener() {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -112,27 +126,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             super.onBackPressed();
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

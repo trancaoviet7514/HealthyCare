@@ -3,6 +3,9 @@ package com.example.trancaoviet.NoodleDrug.DataIO;
 import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 
+import com.example.trancaoviet.NoodleDrug.CallBack.DrugChangeCallBack;
+import com.example.trancaoviet.NoodleDrug.CallBack.DrugImageCallBack;
+import com.example.trancaoviet.NoodleDrug.CallBack.IsSiginCallBack;
 import com.example.trancaoviet.NoodleDrug.Object.Drug;
 import com.example.trancaoviet.NoodleDrug.Object.User;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -18,7 +21,6 @@ import com.google.firebase.storage.StorageReference;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -29,6 +31,7 @@ public class Provider {
     private int maxID;
     private String UserName, Password;
     private User user;
+    private boolean isLogin;
     private static Provider instance = null;
 
     public DatabaseReference getmFirebaseDataBaseRef() {
@@ -63,6 +66,22 @@ public class Provider {
         UserName = userName;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public boolean isLogin() {
+        return isLogin;
+    }
+
+    public void setLogin(boolean login) {
+        isLogin = login;
+    }
+
     public String getPassword() {
         return Password;
     }
@@ -72,14 +91,16 @@ public class Provider {
     }
 
     public static synchronized Provider getInstance() {
-        if(instance==null) {
+        if(instance == null) {
             return instance = new Provider();
         } else {
             return instance;
         }
     }
 
-    public Provider() {
+    private Provider() {
+
+        user = new User();
 
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
@@ -153,13 +174,32 @@ public class Provider {
         mFirebaseDataBaseRef.child("max_id").setValue(maxID);
     }
 
-    public interface DrugChangeCallBack {
-        void onSuccess(ArrayList<Drug> listDrug);
-        void onFailure();
+    public void checkUserIsRegister(final IsSiginCallBack isSiginCallBack, String _userName) {
+        ValueEventListener valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Object value = dataSnapshot.getValue();
+                if(value != null) {
+                    isSiginCallBack.isSigin();
+                } else {
+                    isSiginCallBack.notSigin();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        };
+
+        mFirebaseDataBaseRef.child("User").child(_userName).addListenerForSingleValueEvent(valueEventListener);
     }
-    public interface DrugImageCallBack {
-        void onSuccess(File file);
-        void onFailure();
+
+    public void registerNewUser(User user) {
+        if(user == null)    return;
+        String UserName = user.getName();
+        UserName = UserName.substring(0, UserName.indexOf("."));
+        mFirebaseDataBaseRef.child("User").child(UserName).setValue(user);
     }
+
 }
 

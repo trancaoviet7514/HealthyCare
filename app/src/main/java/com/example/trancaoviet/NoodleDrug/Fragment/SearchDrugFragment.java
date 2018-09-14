@@ -17,6 +17,8 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import com.example.trancaoviet.NoodleDrug.Adapters.DrugAdapter;
+import com.example.trancaoviet.NoodleDrug.CallBack.DrugChangeCallBack;
+import com.example.trancaoviet.NoodleDrug.CallBack.DrugImageCallBack;
 import com.example.trancaoviet.NoodleDrug.DataIO.Provider;
 import com.example.trancaoviet.NoodleDrug.Object.Drug;
 import com.example.trancaoviet.NoodleDrug.R;
@@ -50,7 +52,7 @@ public class SearchDrugFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         mContext = getActivity();
-        provider = new Provider();
+        provider = Provider.getInstance();
 
     }
 
@@ -110,7 +112,7 @@ public class SearchDrugFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable editable) {
                 final String drugNameSearch = edtSearchDrug.getText().toString().toLowerCase();
-                provider.getAllDrug(new Provider.DrugChangeCallBack() {
+                provider.getAllDrug(new DrugChangeCallBack() {
                     @Override
                     public void onSuccess(final ArrayList<Drug> _listDrug) {
                         listDrug.clear();
@@ -123,7 +125,7 @@ public class SearchDrugFragment extends Fragment {
                             }
                             if(j == drugNameSearch.length()){
                                 final Drug drug = _listDrug.get(i);
-                                provider.getAllDrugImage(drug.getId(), new Provider.DrugImageCallBack() {
+                                provider.getAllDrugImage(drug.getId(), new DrugImageCallBack() {
                                     @Override
                                     public void onSuccess(File file) {
                                         drug.setImage(BitmapFactory.decodeFile(file.getPath()));
