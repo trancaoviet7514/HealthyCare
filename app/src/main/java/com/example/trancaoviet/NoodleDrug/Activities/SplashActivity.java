@@ -1,6 +1,7 @@
 package com.example.trancaoviet.NoodleDrug.Activities;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,24 +10,20 @@ import android.widget.ProgressBar;
 import com.example.trancaoviet.NoodleDrug.R;
 
 public class SplashActivity extends AppCompatActivity {
-
-    private ProgressBar mProgessBar;
+    private Handler mHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        mProgessBar = findViewById(R.id.pgbar);
-        mProgessBar.setOnClickListener(new View.OnClickListener() {
-
-            Intent intent = new Intent(SplashActivity.this,MainActivity.class);
+        mHandler = new Handler();
+        mHandler.postDelayed(new Runnable() {
             @Override
-            public void onClick(View view) {
+            public void run() {
+                Intent intent = new Intent(SplashActivity.this,MainActivity.class);
                 startActivity(intent);
             }
-        });
-
-
+        }, 3000);
     }
 }

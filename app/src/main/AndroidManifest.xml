@@ -84,7 +84,8 @@
             android:value="ocr" />
 
         <activity android:name=".Activities.ScanText" />
-        <activity android:name=".Activities.SplashActivity">
+        <activity android:name=".Activities.SplashActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
