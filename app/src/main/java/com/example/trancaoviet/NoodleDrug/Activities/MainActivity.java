@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.nav_search_drug) {
         } else if (id == R.id.nav_search_sick) {
-        } else if (id == R.id.nav_find_doctor) {
+        } else if (id == R.id.nav_find_family_doctor) {
         } else if (id == R.id.nav_Language) {
 
             final Dialog ThemeDialog = new Dialog(this);

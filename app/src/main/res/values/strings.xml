@@ -35,8 +35,8 @@
 
     <string name="search_drug">Search drug</string>
     <string name="search_sick">Search sick</string>
-    <string name="find_doctor">Find doctor</string>
-    <string name="find_drug_store">Find drug store</string>
+    <string name="find_family_doctor">Find family doctor</string>
+    <string name="find_pharmacy">Find pharmacy</string>
 
     <string name="language">Language</string>
     <string name="theme">Theme</string>
@@ -69,6 +69,9 @@
     <!--Bottom Navigation View-->
     <string name="text_home">Home</string>
     <string name="text_schedules">schedules</string>
+    <string name="str_widget">Widget</string>
+    <string name="str_system">System</string>
+    <string name="str_search_health_insurance">Search health insurance</string>
 
 
 </resources>

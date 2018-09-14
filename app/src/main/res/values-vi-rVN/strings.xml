@@ -18,7 +18,7 @@
     <string name="save">Lưu</string>
     <string name="search_drug">Tra cứu thuốc</string>
     <string name="search_sick">Tra cứu bệnh</string>
-    <string name="find_doctor">Tìm bác sĩ gia đình</string>
+    <string name="find_family_doctor">Tìm bác sĩ gia đình</string>
     <string name="language">Ngôn ngữ</string>
     <string name="theme">Giao diện</string>
     <string name="log_out">Đăng xuất</string>

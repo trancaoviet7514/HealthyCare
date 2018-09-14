@@ -26,14 +26,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/txt_drug_image_label"
-            android:src="@drawable/ic_gallery"
+            android:src="@drawable/ic_menu_gallery"
             android:background="@null"/>
         <ImageButton
             android:id="@+id/btn_drug_add_photo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/btn_drug_load_image"
-            android:src="@drawable/ic_camera"
+            android:src="@drawable/ic_menu_camera"
             android:background="@null"
             android:layout_marginTop="4dp"
             />
