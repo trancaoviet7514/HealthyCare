@@ -1,6 +1,6 @@
 package com.example.trancaoviet.NoodleDrug.CallBack;
 
-import com.example.trancaoviet.NoodleDrug.Object.Drug;
+import com.example.trancaoviet.NoodleDrug.Model.Drug;
 import java.util.ArrayList;
 
 public interface DrugChangeCallBack {

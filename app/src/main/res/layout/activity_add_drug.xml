@@ -74,7 +74,7 @@
             android:textStyle="bold"
             android:paddingLeft="@dimen/padding_left_textview_add_new_drug"/>
         <EditText
-            android:id="@+id/edt_drug_name"
+            android:id="@+id/txt_service_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/txt_drug_name_label"
@@ -87,8 +87,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_scan_text_drug_name"
-            app:layout_constraintEnd_toEndOf="@id/edt_drug_name"
-            app:layout_constraintTop_toTopOf="@id/edt_drug_name"
+            app:layout_constraintEnd_toEndOf="@id/txt_service_name"
+            app:layout_constraintTop_toTopOf="@id/txt_service_name"
             android:src="@drawable/qr_code"
             android:background="@null"
             android:layout_margin="2dp"/>
@@ -97,7 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/textview_top_border"
-            app:layout_constraintTop_toBottomOf="@id/edt_drug_name"
+            app:layout_constraintTop_toBottomOf="@id/txt_service_name"
             android:textStyle="bold"
             android:textSize="16dp"
             android:text="@string/str_root_price"

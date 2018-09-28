@@ -43,9 +43,7 @@
 
         <activity
             android:name=".Activities.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.LoginActivity"
             android:label="@string/app_name"
@@ -84,7 +82,8 @@
             android:value="ocr" />
 
         <activity android:name=".Activities.ScanText" />
-        <activity android:name=".Activities.SplashActivity"
+        <activity
+            android:name=".Activities.SplashActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -92,6 +91,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Activities.ServiceDetailActivity" />
+        <activity android:name=".Activities.BookServiceActivity"></activity>
     </application>
 
 </manifest>

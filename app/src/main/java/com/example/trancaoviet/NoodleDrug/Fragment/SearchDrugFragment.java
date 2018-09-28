@@ -20,7 +20,7 @@ import com.example.trancaoviet.NoodleDrug.Adapters.DrugAdapter;
 import com.example.trancaoviet.NoodleDrug.CallBack.DrugChangeCallBack;
 import com.example.trancaoviet.NoodleDrug.CallBack.DrugImageCallBack;
 import com.example.trancaoviet.NoodleDrug.DataIO.Provider;
-import com.example.trancaoviet.NoodleDrug.Object.Drug;
+import com.example.trancaoviet.NoodleDrug.Model.Drug;
 import com.example.trancaoviet.NoodleDrug.R;
 
 import java.io.File;

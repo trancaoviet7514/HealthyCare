@@ -3,11 +3,20 @@ package com.example.trancaoviet.NoodleDrug.DataIO;
 import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 
+import com.example.trancaoviet.NoodleDrug.Activities.BookServiceActivity;
+import com.example.trancaoviet.NoodleDrug.CallBack.ClinicListCallback;
 import com.example.trancaoviet.NoodleDrug.CallBack.DrugChangeCallBack;
 import com.example.trancaoviet.NoodleDrug.CallBack.DrugImageCallBack;
 import com.example.trancaoviet.NoodleDrug.CallBack.IsSiginCallBack;
-import com.example.trancaoviet.NoodleDrug.Object.Drug;
-import com.example.trancaoviet.NoodleDrug.Object.User;
+import com.example.trancaoviet.NoodleDrug.CallBack.LoginVerifyCallBack;
+import com.example.trancaoviet.NoodleDrug.Fragment.HomeFragment;
+import com.example.trancaoviet.NoodleDrug.Fragment.ListClinicFragment;
+import com.example.trancaoviet.NoodleDrug.Fragment.ServiceFragment;
+import com.example.trancaoviet.NoodleDrug.Model.Clinic;
+import com.example.trancaoviet.NoodleDrug.Model.Drug;
+import com.example.trancaoviet.NoodleDrug.Model.News;
+import com.example.trancaoviet.NoodleDrug.Model.Service;
+import com.example.trancaoviet.NoodleDrug.Model.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
@@ -29,10 +38,14 @@ public class Provider {
     private DatabaseReference mFirebaseDataBaseRef = FirebaseDatabase.getInstance().getReference();
     private StorageReference mFirebaseStorageRef = FirebaseStorage.getInstance().getReferenceFromUrl("gs://noodledrug.appspot.com");
     private int maxID;
-    private String UserName, Password;
     private User user;
     private boolean isLogin;
     private static Provider instance = null;
+    private static final String PATH_TO_LIST_USER = "User";
+    private static final String PATH_TO_LIST_DRUG = "drug_list";
+    private static final String PATH_TO_LIST_SERVICE = "list_service";
+    private static final String PATH_TO_LIST_CLINIC = "list_clinic";
+    private static final String PATH_TO_LIST_NEWS = "listNews";
 
     public DatabaseReference getmFirebaseDataBaseRef() {
         return mFirebaseDataBaseRef;
@@ -58,14 +71,6 @@ public class Provider {
         this.maxID = maxID;
     }
 
-    public String getUserName() {
-        return UserName;
-    }
-
-    public void setUserName(String userName) {
-        UserName = userName;
-    }
-
     public User getUser() {
         return user;
     }
@@ -82,14 +87,6 @@ public class Provider {
         isLogin = login;
     }
 
-    public String getPassword() {
-        return Password;
-    }
-
-    public void setPassword(String password) {
-        Password = password;
-    }
-
     public static synchronized Provider getInstance() {
         if(instance == null) {
             return instance = new Provider();
@@ -101,6 +98,7 @@ public class Provider {
     private Provider() {
 
         user = new User();
+        isLogin = false;
 
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
@@ -115,6 +113,15 @@ public class Provider {
         };
 
         mFirebaseDataBaseRef.child("max_id").addValueEventListener(valueEventListener);
+
+        Clinic clinic = new Clinic();
+        for (int i = 0; i < 10; i++) {
+            clinic.setId(i);
+            clinic.setName("clinic"+ i);
+            clinic.setAddress("address" + i);
+            mFirebaseDataBaseRef.child(PATH_TO_LIST_CLINIC).child(String.valueOf(i)).setValue(clinic);
+        }
+
 
     }
 
@@ -136,7 +143,7 @@ public class Provider {
                     drugChangeCallBack.onFailure();
                 }
             };
-            mFirebaseDataBaseRef.child("drug_list").addListenerForSingleValueEvent(myValueEventListener);
+            mFirebaseDataBaseRef.child(PATH_TO_LIST_DRUG).addListenerForSingleValueEvent(myValueEventListener);
     }
 
     public void getAllDrugImage(int drugID, final DrugImageCallBack drugImageCallBack) {
@@ -191,15 +198,115 @@ public class Provider {
             }
         };
 
-        mFirebaseDataBaseRef.child("User").child(_userName).addListenerForSingleValueEvent(valueEventListener);
+        mFirebaseDataBaseRef.child(PATH_TO_LIST_USER).child(_userName).addListenerForSingleValueEvent(valueEventListener);
+    }
+
+    public void verifyAccount(final User _user, final LoginVerifyCallBack _loginVerifyCallBack) {
+        ValueEventListener valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getValue() == null ) {
+                    _loginVerifyCallBack.isFailed();
+                    return;
+                }
+                for(DataSnapshot child: dataSnapshot.getChildren()) {
+                    if(child.getValue() != null) {
+                        if (child.child("Password").getValue() != null){
+                            if(child.child("Password").getValue().equals(_user.getPassword() ) == true ) {
+                                _loginVerifyCallBack.isSucess();
+                                return;
+                            } else {
+                                _loginVerifyCallBack.isFailed();
+                                return;
+                            }
+                        }
+                        else {
+                            _loginVerifyCallBack.isFailed();
+                            return;
+                        }
+                    } else {
+                        _loginVerifyCallBack.isFailed();
+                        return;
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                _loginVerifyCallBack.isFailed();
+            }
+        };
+
+        mFirebaseDataBaseRef.child(PATH_TO_LIST_USER).child(_user.getName()).addListenerForSingleValueEvent(valueEventListener);
     }
 
     public void registerNewUser(User user) {
         if(user == null)    return;
         String UserName = user.getName();
         UserName = UserName.substring(0, UserName.indexOf("."));
-        mFirebaseDataBaseRef.child("User").child(UserName).setValue(user);
+        mFirebaseDataBaseRef.child(PATH_TO_LIST_USER).child(UserName).setValue(user);
     }
 
+    public void loadAllNews() {
+        ValueEventListener valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getValue() == null) return;
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
+                    News news = child.getValue(News.class);
+                    HomeFragment.listNews.add(news);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };
+        mFirebaseDataBaseRef.child(PATH_TO_LIST_NEWS).addListenerForSingleValueEvent(valueEventListener);
+    }
+
+    public void loadAllServices() {
+        ValueEventListener valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getValue() == null) return;
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
+                    Service service = child.getValue(Service.class);
+                    ServiceFragment.listServices.add(service);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };
+        mFirebaseDataBaseRef.child(PATH_TO_LIST_SERVICE).addListenerForSingleValueEvent(valueEventListener);
+    }
+
+    public void loadAllClinic(final Service service, final ClinicListCallback clinicListCallback) {
+        ValueEventListener valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getValue() != null) {
+                    Clinic clinic = dataSnapshot.getValue(Clinic.class);
+                    ListClinicFragment.listClinic.add(clinic);
+
+                }
+                if (ListClinicFragment.listClinic.size() == service.getPharmacyList().size()) {
+                    clinicListCallback.onFinish();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };
+        for (Integer clinicId: service.getPharmacyList()) {
+            mFirebaseDataBaseRef.child(PATH_TO_LIST_CLINIC).child(String.valueOf(clinicId)).addListenerForSingleValueEvent(valueEventListener);
+        }
+    }
 }
 

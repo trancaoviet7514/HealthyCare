@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.example.trancaoviet.NoodleDrug.Adapters.DrugAdapter;
 import com.example.trancaoviet.NoodleDrug.Adapters.PharmacyAdapter;
-import com.example.trancaoviet.NoodleDrug.Object.Pharmacy;
+import com.example.trancaoviet.NoodleDrug.Model.Pharmacy;
 import com.example.trancaoviet.NoodleDrug.R;
 
 import java.util.ArrayList;
@@ -33,7 +33,7 @@ public class DrugDetail extends AppCompatActivity {
         txtComponent = findViewById(R.id.edt_drug_component);
         txtPrice = findViewById(R.id.edt_drug_price);
         txtUsecase = findViewById(R.id.edt_drug_usecase);
-        txtDrugName = findViewById(R.id.edt_drug_name);
+        txtDrugName = findViewById(R.id.txt_service_name);
 
         imgDrugImage.setImageBitmap(DrugAdapter.DrugSelected.getImage());
         txtComponent.setText(DrugAdapter.DrugSelected.getComponent());

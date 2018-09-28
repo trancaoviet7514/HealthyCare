@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbarSize="5dp" >
+        <android.support.constraint.ConstraintLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/img_service"
+                android:src="@drawable/service_image_default"
+                android:adjustViewBounds="true"
+                />
+
+            <TextView
+                android:id="@+id/txt_service_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/img_service"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginStart="8dp"
+                />
+
+            <TextView
+                android:id="@+id/txt_service_price"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_marginStart="8dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_service_name"
+                android:textColor="#f37538"/>
+
+            <TextView
+                android:id="@+id/txt_service_description_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_top_border"
+                app:layout_constraintTop_toBottomOf="@id/txt_service_price"
+                android:paddingLeft="10dp"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/txt_service_description_label"
+                android:id="@+id/txt_service_description"
+                android:textSize="16dp"
+                android:paddingLeft="10dp"/>
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đăng kí"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/btn_service_register"
+        android:background="@drawable/background_blue_rectangle_round_corner"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"/>
+</android.support.constraint.ConstraintLayout>

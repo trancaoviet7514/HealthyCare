@@ -10,7 +10,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.trancaoviet.NoodleDrug.Activities.DrugDetail;
-import com.example.trancaoviet.NoodleDrug.Object.Pharmacy;
+import com.example.trancaoviet.NoodleDrug.Model.Pharmacy;
 import com.example.trancaoviet.NoodleDrug.Activities.MapActivity;
 import com.example.trancaoviet.NoodleDrug.R;
 

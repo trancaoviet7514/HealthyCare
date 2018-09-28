@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -15,12 +16,12 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.trancaoviet.NoodleDrug.DataIO.Provider;
 import com.example.trancaoviet.NoodleDrug.Fragment.ChatFragment;
 import com.example.trancaoviet.NoodleDrug.Fragment.HomeFragment;
@@ -67,10 +68,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         setBottomNavigationViewListener();
 
-        if(provider.isLogin() ) {
+        Intent intent = getIntent();
+        String fragment = intent.getStringExtra("FRAGMENT");
+        if(fragment == null ) {
             bottomNavigationView.setSelectedItemId(R.id.action_home);
-            txtUserName.setText(provider.getUser().getEmail() );
-            imgAvartar.setImageBitmap(provider.getUser().getAvatar());
+        } else {
+            bottomNavigationView.setSelectedItemId(R.id.action_service);
+        }
+
+
+        MenuItem logItem = navigationView.getMenu().getItem(1).getSubMenu().getItem(2);
+
+        if(provider.isLogin() ) {
+
+            txtUserName.setText(provider.getUser().getName() );
+            Glide.with(this)
+                    .load(provider.getUser().getAvatarURL())
+                    .into(imgAvartar);
+
+            logItem.setTitle("Log out");
+            logItem.setIcon(R.drawable.ic_log_out);
+        }
+        else {
+            txtUserName.setText(this.getResources().getString(R.string.str_your_name));
+            imgAvartar.setImageBitmap(BitmapFactory.decodeResource(this.getResources(),R.drawable.avatar_default));
+
+            logItem.setTitle("Log in");
+            logItem.setIcon(R.drawable.ic_log_in);
         }
     }
 
@@ -222,10 +246,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             ThemeDialog.show();
 
 
-        } else if (id == R.id.nav_logOut) {
-
+        } else if (id == R.id.nav_log_out_log_in) {
+            if(provider.isLogin() ) {
+                provider.setLogin(false);
+            }
+            else {
+                provider.setLogin(true);
+            }
             startActivity(new Intent (this, LoginActivity.class));
-
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

@@ -21,7 +21,7 @@
                 />
 
             <TextView
-                android:id="@+id/edt_drug_name"
+                android:id="@+id/txt_service_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/img_drug_image"
@@ -36,7 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/textview_top_border"
-                app:layout_constraintTop_toBottomOf="@id/edt_drug_name"
+                app:layout_constraintTop_toBottomOf="@id/txt_service_name"
                 android:textStyle="bold"
                 android:textSize="16dp"
                 android:text="Giá niêm yết:"

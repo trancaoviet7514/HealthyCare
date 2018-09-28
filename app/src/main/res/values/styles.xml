@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionMenuTextAppearance">@style/MenuItemTextAppearance</item>
     </style>
 
     <style name="AppTheme2" parent="Theme.AppCompat.Light.NoActionBar">
@@ -31,11 +32,17 @@
 
     <style name="FacebookLoginButton">
         <item name="android:textSize">20dp</item>
-        <item name="android:background">@drawable/while_background_retangle_round_corner</item>
+        <item name="android:background">@drawable/background_while_retangle_round_corner</item>
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginBottom">10dp</item>
         <item name="android:layout_gravity">center_horizontal</item>
 
+    </style>
+
+    <bool name="abc_config_actionMenuItemAllCaps">false</bool>
+
+    <style name="MenuItemTextAppearance" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu">
+        <item name="textAllCaps">false</item>
     </style>
 
 </resources>

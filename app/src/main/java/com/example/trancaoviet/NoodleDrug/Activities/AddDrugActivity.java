@@ -17,7 +17,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.example.trancaoviet.NoodleDrug.DataIO.Provider;
-import com.example.trancaoviet.NoodleDrug.Object.Drug;
+import com.example.trancaoviet.NoodleDrug.Model.Drug;
 import com.example.trancaoviet.NoodleDrug.R;
 
 import java.io.File;
@@ -54,7 +54,7 @@ public class AddDrugActivity extends AppCompatActivity {
         btnTakePhoto = findViewById(R.id.btn_drug_add_photo);
         btnLoadPhoto = findViewById(R.id.btn_drug_load_image);
         imgDrugImage = findViewById(R.id.img_drug_image);
-        edtDrugName = findViewById(R.id.edt_drug_name);
+        edtDrugName = findViewById(R.id.txt_service_name);
         edtPrice = findViewById(R.id.edt_drug_price);
         edtComponent = findViewById(R.id.edt_drug_component);
         edtUseCase = findViewById(R.id.edt_drug_usecase);

@@ -10,9 +10,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.trancaoviet.NoodleDrug.Activities.MainActivity;
 import com.example.trancaoviet.NoodleDrug.Fragment.SearchDrugFragment;
-import com.example.trancaoviet.NoodleDrug.Object.Drug;
+import com.example.trancaoviet.NoodleDrug.Model.Drug;
 import com.example.trancaoviet.NoodleDrug.Activities.DrugDetail;
 import com.example.trancaoviet.NoodleDrug.R;
 
